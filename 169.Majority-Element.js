@@ -8,18 +8,18 @@
  */
 var majorityElement = function(nums) {
     var storage = {};
-    
-    var len = nums.length;
     var half = nums.length/2;
+    var i;
+    var num;
    
-    nums.forEach(function(num){
-        storage[num] ? storage[num]++ : storage[num] = 1;
-    });
+    for (i = 0; i < nums.length; i++) {
+        num = nums[i];
+        storage[num] = storage[num] ? storage[num] + 1 : 1;
 
-    for(var key in storage){
-      var tally = storage[key];
-      if(tally > half){
-          return +key;
-      }
+        if (storage[num] > half) {
+            return +num;
+        }
     }
 };
+
+
