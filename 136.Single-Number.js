@@ -5,4 +5,16 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
+  var storage = {};
+  nums.forEach(function(num) {
+    // delete key if num makes pair
+    if (storage[num]) {
+      delete storage[num];
+    } else {
+      storage[num] = 1;
+    }
+  });
+  // return only key left
+  return +Object.keys(storage)[0];
 };
+
