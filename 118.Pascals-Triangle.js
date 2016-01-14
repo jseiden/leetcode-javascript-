@@ -41,7 +41,7 @@ function makeNextRow(prevRow) {
   for (var i = 0; i < prevRow.length - 1; i++) {
     row.push(prevRow[i] + prevRow[i+1]);
   }
-
+  // add 1 to each side 
   row.unshift(1);
   row.push(1);
 
