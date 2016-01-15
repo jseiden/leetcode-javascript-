@@ -15,4 +15,29 @@ You are not suppose to use the library's sort function for this problem.
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-};
+  var len = nums.length; 
+  var zeroes = [];
+  var ones = [];
+  var twos = [];
+  var i; 
+  var num;
+  
+  if (len === 0 || len === 1) {
+      return;
+  }
+  
+  for (i = 0; i < len; i++) {
+    num = nums[i];
+    if (num === 0) {
+      zeroes.push(0);
+    } else if (num === 1) {
+     ones.push(1);
+    } else if (num === 2) {
+      twos.push(2);
+    }
+  }
+
+  nums = zeroes.concat(ones, twos);
+
+}
+
